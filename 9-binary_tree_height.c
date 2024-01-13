@@ -8,14 +8,14 @@
 */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
+	binary_tree_t **queue = malloc(sizeof(binary_tree_t *) * 1024);
+	int front = 0, rear = 0;
+	size_t height = 0;
+
 	if (tree == NULL)
 	{
 		return (0);
 	}
-
-	binary_tree_t **queue = malloc(sizeof(binary_tree_t *) * 1024);
-	int front = 0, rear = 0;
-	size_t height = 0;
 
 	queue[rear++] = (binary_tree_t *)tree;
 
