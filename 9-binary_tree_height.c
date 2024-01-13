@@ -6,6 +6,7 @@
  * @tree: pointer to the root node of the tree to measure the height
  * Return: height of the tree, or 0 if tree is NULL
 */
+
 size_t binary_tree_height(const binary_tree_t *tree)
 {
 	binary_tree_t **queue = malloc(sizeof(binary_tree_t *) * 1024);
@@ -14,6 +15,7 @@ size_t binary_tree_height(const binary_tree_t *tree)
 
 	if (!tree || !queue)
 	{
+		free(queue);
 		return (0);
 	}
 
